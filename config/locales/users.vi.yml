@@ -1,0 +1,18 @@
+vi:
+  form:
+    full_name: "Tên đầy đủ"
+    pass: "Mật khẩu"
+    pass_c: "Xác nhận mật khẩu"
+    signup: "Đăng ký"
+    err: "Form chứa %{pluralize}"
+    errs: "lỗi."
+    found: "Không tìm thấy người dùng"
+    create: "Vui lòng kiểm tra email của bạn để kích hoạt tài khoản của bạn."
+  account:
+    active: "Tài khoản đã được kích hoạt!"
+    in_active: "Liên kết kích hoạt không hợp lệ"
+    content_mail: "My Cash FLow"
+    hi: "Xin chào"
+    content: "Chào mừng đến với My Cash FLow! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
+    activate: "Kích hoạt"
+    mailer: "Kích hoạt tài khoản"
