@@ -2,3 +2,13 @@ vi:
   layouts:
     application:
       base_title: "Quản lý chi tiêu"
+    header:
+      account: "Tài khoản"
+      plan: "Kế hoạch"
+      home: "Trang chủ"
+      language: "Ngôn ngữ"
+      cash_flow_management: "Quản Lý Chi Tiêu"
+  static_pages:
+      home:
+        home: "Trang chủ"
+        welcome: "Xin Chào"
