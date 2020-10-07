@@ -1,10 +1,11 @@
 vi:
   login:
     not_active: "Tài khoản chưa được kích hoạt. Kiểm tra email của bạn để kích hoạt tài khoản."
-    invalid: "Email / mật khẩu không hợp lệ"
+    invalid: "Email / mật khẩu không hợp lệ hoặc"
     logged_out: "Đăng xuất thành công"
     password: "Mật khẩu"
     login: "Đăng nhập"
     remember: "Nhớ mật khẩu"
     ques: "Bạn chưa có tài khoản?"
     please_log_in: "vui lòng đăng nhập"
+    checkemail: "email không tồn tại"

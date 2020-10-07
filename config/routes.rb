@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     get "/chart", to: "chart#show"
     post "/login", to: "sessions#create"
+    get "/delete", to: "users#user_delete"
     delete "/logout", to: "sessions#destroy"
     resources :users
     resources :account_activations, only: [:edit]

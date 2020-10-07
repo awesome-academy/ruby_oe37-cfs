@@ -38,3 +38,7 @@ en:
     save_c: "Save changes"
     edit_success: "Profile updated"
     edit_fail: "Profile update failed"
+  manger_user:
+    user_deleted: "user deleted successfully"
+    failed: "User delete failed"
+    delete: "Delete"

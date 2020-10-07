@@ -42,7 +42,9 @@ ActiveRecord::Schema.define(version: 2020_10_09_021405) do
     t.string "email"
     t.string "password_digest"
     t.string "remember_digest"
-    t.boolean "role"
+    t.boolean "role", default: false
+    t.integer "delete_flag", default: 0, null: false
+    t.string "reason"
     t.string "activation_digest"
     t.boolean "activated"
     t.datetime "activated_at"

@@ -37,3 +37,7 @@ vi:
     save_c: "Lưu thay đổi"
     edit_success: "Hồ sơ được cập nhật"
     edit_fail: "Cập nhật hồ sơ không thành công"
+  manger_user:
+    user_deleted: "Người dùng đã xóa thành công"
+    failed: "Người dùng xóa thất bại"
+    delete: "Xóa"

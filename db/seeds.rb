@@ -29,9 +29,9 @@ end
   Plan.create!(
     month: rand(1..12),
     category_id: rand(1..5),
-    spending_category: rand(1..2),
-    type_money: rand(1..2),
-    status: rand(1..2),
+    spending_category: rand(0..1),
+    type_money: rand(0..1),
+    status: rand(0..1),
     moneys: rand(1000..10000),
     user_id: rand(1..10),
     created_at: created_at

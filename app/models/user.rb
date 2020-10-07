@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :categories, dependent: :destroy
   has_many :plans, dependent: :destroy
   has_many :categories, dependent: :destroy
+  enum delete_flag: {activate: 0, inactive: 1}
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
