@@ -1,0 +1,7 @@
+vi:
+  login:
+    logged_in_successfully: "Đăng nhập thành công"
+    Invalid_email: " email / mật khẩu không hợp lệ"
+    logged_out: "Đăng xuất thành công"
+    password: "mật khẩu"
+    login: "Đăng nhập"
