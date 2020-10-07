@@ -1,0 +1,12 @@
+vi:
+  category:
+    title: "Tạo Danh Mục"
+    submit: "Tạo"
+    success: "Thành công"
+    failed: "Thao tác không thành công"
+    deleted: "Xóa Thành công"
+    submit_delete: "Xóa"
+    you_sure: "Bạn chắc chắn?"
+    namee: "Tên danh mục"
+    indexx: "Thứ tự"
+    error: "không tìm thấy"

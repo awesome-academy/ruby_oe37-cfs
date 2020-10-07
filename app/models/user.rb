@@ -1,7 +1,10 @@
 class User < ApplicationRecord
   has_many :categories, dependent: :destroy
   has_many :plans, dependent: :destroy
+  has_many :categories, dependent: :destroy
+
   attr_accessor :remember_token, :activation_token, :reset_token
+
   before_save   :downcase_email
   before_create :create_activation_digest
 

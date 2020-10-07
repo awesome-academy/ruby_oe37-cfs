@@ -9,6 +9,7 @@ vi:
       login: "Đăng nhập"
       language: "Ngôn ngữ"
       cash_flow_management: "Quản Lý Chi Tiêu"
+      category: "Danh mục"
   static_pages:
       home:
         home: "Trang chủ"

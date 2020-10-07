@@ -1,0 +1,30 @@
+<h1><%= I18n.t("category.title") %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for :category do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.submit t("category.submit"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<br/>
+<div class="col-md-10 col-lg-offset-1">
+  <table class="table text-center" style="border: 2px solid black;">
+    <tr class="bg-primary">
+      <th class="text-center col-md-1"><%= t("category.indexx") %></th>
+      <th class="text-center col-md-3"><%= t("category.namee") %></th>
+      <th class="text-center col-md-3"></th>
+    </tr>
+      <% @categories.each_with_index do |item, index| %>
+        <tr class="bg-success">
+          <td><%= create_index params[:page], index, Settings.user.page %></td>
+          <td scope="row"><%= item.name %></td>
+          <td scope="row"><%= link_to t("category.submit_delete"), item, method: :delete, data: { confirm: t("category.you_sure") } %></td>
+        </tr>
+      <% end %>
+  </table>
+  <div id="paginator">
+    <%= paginate @categories %>
+  </div>
+</div>
