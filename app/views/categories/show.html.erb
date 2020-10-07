@@ -1,0 +1,18 @@
+<h1 class="text-center" style="color: red;">list Caregory</h1>
+<div class="col-md-10 col-lg-offset-1">
+  <table class="table text-center" style="border: 2px solid black;">
+    <tr class="bg-primary">
+      <th class="text-center col-md-1">index</th>
+      <th class="text-center col-md-3">name</th>
+    </tr>
+      <% @categories.each_with_index do |category, index| %>
+        <tr class="bg-success">
+          <td><%= index %></td>
+          <td scope="row"><%= category.name %></td>
+        </tr>
+      <% end %>
+  </table>
+  <div id="paginator">
+  <%= paginate @categories %>
+</div>
+</div>

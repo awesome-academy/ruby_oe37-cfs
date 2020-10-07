@@ -6,6 +6,7 @@ en:
       account: "Account"
       plan: "Plan"
       home: "Home"
+      login: "Log in"
       language: "Language"
       cash_flow_management: "Cash Flow Management"
   static_pages:
