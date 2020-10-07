@@ -16,6 +16,7 @@ $davy-grey: #555;
 $light-gray2: #222;
 $light-gray3: #bbb;
 $gray-lighter: #888;
+$bbb: #bbb;
 
 /* universal */
 
@@ -125,6 +126,12 @@ textarea,
 select,
 .uneditable-input {
   border: 1px solid $light-gray3;
+  box-sizing:border-box;
+    }
+
+/* forms */
+input, textarea, select, .uneditable-input {
+  border: 1px solid $bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;

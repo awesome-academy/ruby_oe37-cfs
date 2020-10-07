@@ -10,7 +10,11 @@ vi:
       language: "Ngôn ngữ"
       cash_flow_management: "Quản Lý Chi Tiêu"
       category: "Danh mục"
+      chart: "Biểu Đồ"
   static_pages:
       home:
         home: "Trang chủ"
         welcome: "Xin Chào"
+  chart:
+    title_chart: "Biểu đồ thu nhập và chi tiêu"
+    no_data: "không có dữ liệu"
