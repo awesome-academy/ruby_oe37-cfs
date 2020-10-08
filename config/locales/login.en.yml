@@ -1,0 +1,7 @@
+en:
+  login:
+    logged_in_successfully: "Logged in successfully"
+    Invalid_email: "Invalid email/password combination"
+    logged_out: "Successfully logged out"
+    password: "password"
+    login: "Log in"

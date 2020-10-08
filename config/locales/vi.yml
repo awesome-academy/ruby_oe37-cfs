@@ -6,6 +6,7 @@ vi:
       account: "Tài khoản"
       plan: "Kế hoạch"
       home: "Trang chủ"
+      login: "Đăng nhập"
       language: "Ngôn ngữ"
       cash_flow_management: "Quản Lý Chi Tiêu"
   static_pages:
