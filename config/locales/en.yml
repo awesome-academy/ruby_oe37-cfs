@@ -2,3 +2,13 @@ en:
   layouts:
     application:
       base_title: "Cash Flow Management"
+    header:
+      account: "Account"
+      plan: "Plan"
+      home: "Home"
+      language: "Language"
+      cash_flow_management: "Cash Flow Management"
+  static_pages:
+    home:
+      home: "Home"
+      welcome: "Welcome"
