@@ -1,0 +1,18 @@
+en:
+  form:
+    full_name: "Fullname"
+    pass: "Password"
+    pass_c: "Password confirmation"
+    signup: "Sign up"
+    err: "The form contains %{pluralize}"
+    errs: "error"
+    found: "Not found user"
+    create: "Please check your email to activate your account."
+  account:
+    active: "Account activated!"
+    in_active: "Invalid activation link"
+    content_title: "My Cash FLow"
+    hi: "Hi"
+    content: "Welcome to the Sample App! Click on the link below to activate your account:"
+    activate: "Activate"
+    mailer: "Account activation"
