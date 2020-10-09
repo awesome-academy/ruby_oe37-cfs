@@ -31,3 +31,10 @@ en:
     update_mgs: "can't be empty"
     update_success: "Password has been reset."
     expired: "Password reset has expired."
+  edit:
+    title: "Edit user"
+    edit_title: "Update your profile"
+    change: "Change"
+    save_c: "Save changes"
+    edit_success: "Profile updated"
+    edit_fail: "Profile update failed"

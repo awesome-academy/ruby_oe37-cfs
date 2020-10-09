@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show]
+  before_action :find_user, only: [:show, :edit, :update]
 
   def show; end
 
@@ -19,6 +19,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @user.update(user_params)
+      flash[:success] = t "edit.edit_success"
+      redirect_to @user
+    else
+      flash.now[:danger] = t "edit.edit_fail"
+      render :edit
+    end
+  end
+
   private
 
   def user_params
@@ -27,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def find_user
-    @user = @user = User.find_by id: params[:id]
+    @user = User.find_by id: params[:id]
     return if @user
 
     flash[:danger] = t "form.found"

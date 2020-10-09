@@ -1,11 +1,18 @@
-<% provide(:title, @user.full_name) %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.full_name %>
-      </h1>
+      <% if current_page?(current_user) %>
+        <h1>
+          <%= gravatar_for @user %>
+          <%= @user.full_name %>
+        </h1>
+      <% else %>
+        <h1>
+          <%= gravatar_for @user %>
+          <%= @user.full_name %>
+        </h1>
+        <%= link_to t("edit.change"), "http://gravatar.com/emails", target: "_blank", class: "change" %>
+      <% end %>
     </section>
   </aside>
 </div>

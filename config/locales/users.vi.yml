@@ -30,3 +30,10 @@ vi:
     update_pass: "Cập nhật mật khẩu"
     update_mgs: "không thể để trống"
     update_success: "Mật khẩu đã được đặt lại."
+  edit:
+    title: "Chỉnh sửa người dùng"
+    edit_title: "Cập nhật hồ  sơ của bạn"
+    change: "Thay đổi"
+    save_c: "Lưu thay đổi"
+    edit_success: "Hồ sơ được cập nhật"
+    edit_fail: "Cập nhật hồ sơ không thành công"
