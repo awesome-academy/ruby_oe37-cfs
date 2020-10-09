@@ -5,8 +5,14 @@
       <%= f.label :email %>
       <%= f.email_field :email, class: "form-control" %>
       <%= f.label :password, t("login.password")%>
+      <%= link_to t("account.forgot_pass"), new_password_reset_path %>
       <%= f.password_field :password, class: "form-control" %>
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span><%= t("login.remember") %></span>
+      <% end %>
       <%= f.submit t("login.login"), class: "btn btn-primary" %>
     <% end %>
+    <p><%= t("login.ques") %> <%= link_to t("form.signup"), signup_path %></p>
   </div>
 </div>

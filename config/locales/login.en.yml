@@ -1,7 +1,9 @@
 en:
   login:
-    logged_in_successfully: "Logged in successfully"
-    Invalid_email: "Invalid email/password combination"
+    not_active: "Account not activated. Check your email for the activation link."
+    invalid: "Invalid email/password combination"
     logged_out: "Successfully logged out"
-    password: "password"
+    password: "Password"
     login: "Log in"
+    remember: "Remember me"
+    ques: "Don't have an account?"
