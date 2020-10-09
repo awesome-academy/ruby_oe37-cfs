@@ -11,6 +11,8 @@ class Plan < ApplicationRecord
 
   validates :moneys, numericality: {greater_than_or_equal_to: Settings.min_money}, presence: true
 
+  delegate :name, to: :category, prefix: :category, allow_nil: true
+
   def self.spending_category_option
     spending_categories.map{|key, _value| [key.capitalize, key]}
   end
