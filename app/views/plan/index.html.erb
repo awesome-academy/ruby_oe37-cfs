@@ -1,0 +1,27 @@
+<% provide :title, t(".view_plan") %>
+
+<%= form_tag plan_index_path, method: :get, remote: true do %>
+  <div class="col-md-10 col-lg-offset-1">
+    <%= label_tag :month, t(".month") %>
+    <%= select_tag :month, options_for_select(1..12),
+    {include_blank: true, class: "form-control"} %>
+
+    <%= label :status, t(".status") %>
+    <%= select_tag :status,
+      options_for_select(Plan.status_option_search),
+      {include_blank: true, class: "form-control"} %>
+  </div>
+
+  <div class="col-md-10 col-lg-offset-1">
+    <%= submit_tag t(".search"), class: "btn btn-primary" %>
+  </div>
+<% end %>
+<div>
+  <h1 class="col-md-10 col-lg-offset-1 text-center"><%= t ".plan_list" %></h1>
+</div>
+<div id="expenses" class="col-md-10 col-lg-offset-1">
+  <%= render "expenses" %>
+</div>
+<div id="income" class="col-md-10 col-lg-offset-1">
+  <%= render "income" %>
+</div>

@@ -3,7 +3,6 @@ vi:
     new:
       create_plan: "Tạo Kế Hoạch"
       create_new_plan: "Tạo mới kế hoạch"
-      budget: "Ngân sách"
       category: "Danh mục"
       income_expenses: "Loại chi tiêu"
       fixed_incurred : "Loại tiền"
@@ -13,3 +12,16 @@ vi:
     create:
       create_successfully: "Tạo mới thành công"
       error: "Lỗi"
+    index:
+      view_plan: "Chi tiết kế hoạch"
+      search: "Tìm kiếm"
+      plan_list: "Danh sách kế hoạch"
+      status: "Trạng thái"
+      month: "Tháng"
+    header_table:
+      category: "Danh mục"
+      income_expenses: "Loại chi tiêu"
+      fixed_incurred : "Loại tiền"
+      moneys: "Tiền"
+      status: "Trạng thái"
+      month: "Tháng"

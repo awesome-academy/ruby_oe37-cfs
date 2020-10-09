@@ -5,7 +5,6 @@
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
         <li><%= link_to t(".home"), home_path %></li>
-        <li><%= link_to t(".plan"), "#" %></li>
         <li><%= link_to t(".category"), categories_path %></li>
         <li><%= link_to t(".chart"), chart_path %></li>
         <li class="dropdown">
@@ -14,12 +13,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><%= link_to t(".create_plan"), new_plan_path %></li>
-            <li><%= link_to t(".view_plan"), "#" %></li>
-            <li><%= link_to t(".setting"), edit_user_path(current_user) %></li>
-            <li class="divider"></li>
-            <li><%= link_to t(".log_out"),
-              logout_path, method: :delete %>
-            </li>
+            <li><%= link_to t(".view_plan"), plan_index_path %></li>
           </ul>
           </li>
 
@@ -28,7 +22,7 @@
               <%= t ".account" %> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to t(".profile"), "#"%></li>
+              <li><%= link_to t(".profile"), "#" %></li>
               <li><%= link_to t(".setting"), "#" %></li>
               <li class="divider"></li>
               <li><%= link_to t(".log_out"),
