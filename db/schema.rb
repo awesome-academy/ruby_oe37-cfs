@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2020_10_09_021405) do
   create_table "plans", force: :cascade do |t|
     t.float "budget"
     t.integer "month"
-    t.integer "spending_category"
-    t.integer "type"
-    t.integer "status"
+    t.integer "spending_category", default: 0, null: false
+    t.integer "type_money", default: 0, null: false
+    t.integer "status", default: 0, null: false
     t.float "moneys"
     t.integer "user_id", null: false
     t.integer "category_id", null: false
