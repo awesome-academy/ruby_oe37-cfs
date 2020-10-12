@@ -1,6 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* variables */
 $white: #fff;
 $bright-gray: #eaeaea;
@@ -9,15 +16,8 @@ $davy-grey: #555;
 $light-gray2: #222;
 $light-gray3: #bbb;
 $gray-lighter: #888;
-$bbb: #bbb;
 
 /* universal */
-
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
 body {
   padding-top: 60px;
@@ -75,7 +75,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: $white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -83,16 +83,8 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: $white;
   text-decoration: none;
-}
-
-$gray-medium-light: #eaeaea;
-
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 /* sidebar */
@@ -123,8 +115,6 @@ aside {
       margin-bottom: 3px;
       margin-top: 0px;
     }
-
-    box-sizing:border-box;
   }
 }
 
@@ -134,13 +124,7 @@ input,
 textarea,
 select,
 .uneditable-input {
-  box-sizing:border-box;
-    }
-
-/* forms */
-$bbb: #bbb;
-input, textarea, select, .uneditable-input {
-  border: 1px solid $bbb;
+  border: 1px solid $light-gray3;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
@@ -152,23 +136,27 @@ input {
 
 #error_explanation {
   color: red;
+
   ul {
     color: red;
-    margin: 0 0 30px;
+    margin: 0 0 30px 0;
   }
 }
+
 .field_with_errors {
   @extend .has-error;
-.field_with_errors {
-  @extend .has-error;
+
   .form-control {
     color: $state-danger-text;
   }
 }
-}
+
+
 /* pagination with Kaminari */
 
-.pagination a, .pagination span.current, .pagination span.gap {
+.pagination a,
+.pagination span.current,
+.pagination span.gap {
   float: left;
   padding: 0 14px;
   line-height: 38px;
@@ -180,29 +168,53 @@ input {
 
 .pagination {
   border-left: 1px solid #ddd;
-  .first{
-    padding : 0;
+
+  .first {
+    padding: 0;
     float: none;
     border: none;
   }
+
   .prev {
-    padding : 0;
+    padding: 0;
     float: none;
     border: none;
   }
-  .page{
-    padding : 0;
+
+  .page {
+    padding: 0;
     float: none;
     border: none;
   }
-  .next{
-    padding : 0;
+
+  .next {
+    padding: 0;
     float: none;
     border: none;
   }
-  .last{
-    padding : 0;
+
+  .last {
+    padding: 0;
     float: none;
     border: none;
   }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.spacing {
+  margin-bottom: 20px;
 }
