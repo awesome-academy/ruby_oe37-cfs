@@ -9,6 +9,7 @@ en:
       login: "Log in"
       language: "Language"
       cash_flow_management: "Cash Flow Management"
+      category: "category"
   static_pages:
     home:
       home: "Home"

@@ -9,6 +9,7 @@ $davy-grey: #555;
 $light-gray2: #222;
 $light-gray3: #bbb;
 $gray-lighter: #888;
+$bbb: #bbb;
 
 /* universal */
 
@@ -128,13 +129,18 @@ aside {
 }
 
 /* forms */
-$color: #bbb;
 
 input,
 textarea,
 select,
 .uneditable-input {
-  border: 1px solid $color;
+  box-sizing:border-box;
+    }
+
+/* forms */
+$bbb: #bbb;
+input, textarea, select, .uneditable-input {
+  border: 1px solid $bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
@@ -146,49 +152,57 @@ input {
 
 #error_explanation {
   color: red;
-
   ul {
     color: red;
     margin: 0 0 30px;
   }
 }
-
 .field_with_errors {
   @extend .has-error;
-
+.field_with_errors {
+  @extend .has-error;
   .form-control {
     color: $state-danger-text;
   }
 }
+}
+/* pagination with Kaminari */
 
-/* forms */
-input,
-textarea,
-select,
-.uneditable-input {
-  border: 1px solid $light-gray3;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
+.pagination a, .pagination span.current, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #DDD;
+  border-left-width: 0;
 }
 
-input {
-  height: auto !important;
-}
-
-#error_explanation {
-  color: red;
-
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
+.pagination {
+  border-left: 1px solid #ddd;
+  .first{
+    padding : 0;
+    float: none;
+    border: none;
   }
-}
-
-.field_with_errors {
-  @extend .has-error;
-
-  .form-control {
-    color: $state-danger-text;
+  .prev {
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .page{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .next{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .last{
+    padding : 0;
+    float: none;
+    border: none;
   }
 }

@@ -1,0 +1,12 @@
+en:
+  category:
+    title: "Create Categories"
+    submit: "Submit"
+    success: "Success"
+    failed: "manipulation failed"
+    deleted: "Deleted Successfully"
+    submit_delete: "Delete"
+    you_sure: "You sure?"
+    namee: "Name list"
+    indexx: "Order"
+    error: "not found"
