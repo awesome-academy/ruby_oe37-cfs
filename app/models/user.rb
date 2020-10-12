@@ -16,6 +16,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.min_pass},
                                        allow_nil: true
   has_secure_password
+  has_many :categories, dependent: :destroy
 
   def self.digest string
     cost = if ActiveModel::SecurePassword.min_cost

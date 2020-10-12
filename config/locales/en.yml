@@ -10,7 +10,11 @@ en:
       language: "Language"
       cash_flow_management: "Cash Flow Management"
       category: "category"
+      chart: "chart"
   static_pages:
     home:
       home: "Home"
       welcome: "Welcome"
+  chart:
+    title_chart: "Graph of income and expenditure"
+    no_data: No data

@@ -1,0 +1,3 @@
+<%= line_chart Plan.group(:type_money).group_by_day(:month).sum(:moneys),
+  xtitle: "month", ytitle: "moneys", title: I18n.t("chart.title_chart"),
+    download: {background: "#ffffff"}, messages: {empty: t("chart.no_data")}%>
