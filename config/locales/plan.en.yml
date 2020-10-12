@@ -1,0 +1,15 @@
+en:
+  plan:
+    new:
+      create_plan: "Create Plan"
+      create_new_plan: "Create New Plan"
+      budget: "Budget"
+      category: "Category"
+      income_expenses: "Spending type"
+      fixed_incurred : "Type of money"
+      moneys: "Moneys"
+      status: "Status"
+      month: "Month"
+    create:
+      create_successfully: "Create Successfully"
+      error: "Error"
