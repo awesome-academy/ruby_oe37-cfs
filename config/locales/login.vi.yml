@@ -1,7 +1,9 @@
 vi:
   login:
-    logged_in_successfully: "Đăng nhập thành công"
-    Invalid_email: " email / mật khẩu không hợp lệ"
+    not_active: "Tài khoản chưa được kích hoạt. Kiểm tra email của bạn để kích hoạt tài khoản."
+    invalid: "Email / mật khẩu không hợp lệ"
     logged_out: "Đăng xuất thành công"
-    password: "mật khẩu"
+    password: "Mật khẩu"
     login: "Đăng nhập"
+    remember: "Nhớ mật khẩu"
+    ques: "Bạn chưa có tài khoản?"
