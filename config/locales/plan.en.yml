@@ -3,7 +3,6 @@ en:
     new:
       create_plan: "Create Plan"
       create_new_plan: "Create New Plan"
-      budget: "Budget"
       category: "Category"
       income_expenses: "Spending type"
       fixed_incurred : "Type of money"
@@ -13,3 +12,16 @@ en:
     create:
       create_successfully: "Create Successfully"
       error: "Error"
+    index:
+      view_plan: "View Plan"
+      search: "Search"
+      plan_list: "Plan List"
+      status: "Status"
+      month: "Month"
+    header_table:
+      category: "Category"
+      income_expenses: "Spending type"
+      fixed_incurred : "Type of money"
+      moneys: "Moneys"
+      status: "Status"
+      month: "Month"

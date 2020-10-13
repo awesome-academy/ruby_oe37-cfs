@@ -6,6 +6,10 @@ class Plan < ApplicationRecord
   enum type_money: {fixed: 0, incurred: 1}
   enum status: {confirm: 0, unconfirm: 1}
 
+  scope :where_by_month, ->(param_month){where(month: param_month) if param_month.present?}
+
+  scope :where_by_status, ->(param_status){where(status: param_status) if param_status.present?}
+
   def self.spending_category_option
     spending_categories.map{|key, _value| [key.capitalize, key]}
   end
@@ -16,5 +20,9 @@ class Plan < ApplicationRecord
 
   def self.status_option
     statuses.map{|key, _value| [key.capitalize, key]}
+  end
+
+  def self.status_option_search
+    statuses.map{|key, value| [key.capitalize, value]}
   end
 end
