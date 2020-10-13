@@ -15,6 +15,12 @@ vi:
       cash_flow_management: "Quản Lý Chi Tiêu"
       category: "Danh mục"
       chart: "Biểu Đồ"
+      user: "Người dùng"
+      create_plan: "Tạo Kế hoạch"
+      view_plan: "Xem Kế hoạch"
+      log_out: "Đăng xuất"
+      profile: "Hồ sơ"
+      setting: "Cài đặt"
   static_pages:
       home:
         home: "Trang chủ"

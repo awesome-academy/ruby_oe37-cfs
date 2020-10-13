@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :categories, dependent: :destroy
   has_many :plans, dependent: :destroy
   has_many :categories, dependent: :destroy
+  enum delete_flag: {activate: 0, inactive: 1}
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
@@ -49,6 +50,15 @@ class User < ApplicationRecord
 
   def activate
     update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |user|
+        csv << user.attributes.values_at(*column_names)
+      end
+    end
   end
 
   def send_activation_email

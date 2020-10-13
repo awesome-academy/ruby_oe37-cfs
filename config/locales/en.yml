@@ -15,6 +15,12 @@ en:
       cash_flow_management: "Cash Flow Management"
       category: "Category"
       chart: "Chart"
+      user: "Users"
+      create_plan: "Create plan"
+      view_plan: "View plan"
+      log_out: "Log out"
+      profile: "Profile"
+      setting: "Setting"
   static_pages:
     home:
       home: "Home"
