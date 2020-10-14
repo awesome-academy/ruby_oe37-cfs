@@ -37,3 +37,19 @@ vi:
     save_c: "Lưu thay đổi"
     edit_success: "Hồ sơ được cập nhật"
     edit_fail: "Cập nhật hồ sơ không thành công"
+  manger_user:
+    delete: "Xóa"
+    show: "Hiển thị"
+    index: "Số Stt"
+    full_name: "Họ và Tên"
+    email: "Email"
+    activated: "Trạng thái"
+    activated_at: "Ngày tạo"
+    list_user: Danh Sách Người Dùng
+    not_user: "Không tồn có người dùng"
+    no_person: "Không có người nào được hiển thị"
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      long: "%d %B, %Y"
+      short: "%d %b"

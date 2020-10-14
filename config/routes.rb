@@ -12,5 +12,9 @@ Rails.application.routes.draw do
     resources :plans, only: [:index, :new , :create]
     resources :password_resets, only: [:new, :create, :edit, :update]
     resources :categories, only: [:index, :create, :destroy]
+
+    namespace :admin do
+      resources :users, only: [:index]
+    end
   end
 end
