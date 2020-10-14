@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+  <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+    <Worksheet ss:Name="Sheet1">
+      <Table>
+        <Row>
+          <Cell><Data ss:Type="String">ID</Data></Cell>
+          <Cell><Data ss:Type="String">Month</Data></Cell>
+          <Cell><Data ss:Type="String">Spending type</Data></Cell>
+          <Cell><Data ss:Type="String">Type of money</Data></Cell>
+          <Cell><Data ss:Type="String">Moneys</Data></Cell>
+          <Cell><Data ss:Type="String">Category</Data></Cell>
+          <Cell><Data ss:Type="String">Status</Data></Cell>
+        </Row>
+        <% @plans.each_with_index do |plan, index| %>
+          <Row>
+            <Cell><Data ss:Type="Number"><%= index+1 %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= plan.month %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= plan.spending_category %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= plan.type_money %></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= plan.moneys %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= plan.category_name %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= plan.status %></Data></Cell>
+          </Row>
+        <% end %>
+      </Table>
+    </Worksheet>
+  </Workbook>

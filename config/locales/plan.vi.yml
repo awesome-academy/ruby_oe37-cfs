@@ -18,6 +18,9 @@ vi:
       plan_list: "Danh sách kế hoạch"
       status: "Trạng thái"
       month: "Tháng"
+      csv: "CSV"
+      excel: "Excel"
+      moneys: "$%{plan_moneys}"
     header_table:
       category: "Danh mục"
       income_expenses: "Loại chi tiêu"
