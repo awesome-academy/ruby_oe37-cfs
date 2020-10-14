@@ -3,7 +3,7 @@ en:
     title: "Create Categories"
     submit: "Submit"
     success: "Success"
-    failed: "manipulation failed"
+    failed: "Manipulation failed"
     deleted: "Deleted Successfully"
     submit_delete: "Delete"
     you_sure: "You sure?"

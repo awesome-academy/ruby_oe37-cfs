@@ -7,8 +7,9 @@ class Plan < ApplicationRecord
   enum status: {confirm: 0, unconfirm: 1}
 
   scope :where_by_month, ->(param_month){where(month: param_month) if param_month.present?}
-
   scope :where_by_status, ->(param_status){where(status: param_status) if param_status.present?}
+
+  validates :moneys, numericality: {greater_than_or_equal_to: Settings.min_money}, presence: true
 
   def self.spending_category_option
     spending_categories.map{|key, _value| [key.capitalize, key]}

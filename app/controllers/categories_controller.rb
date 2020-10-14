@@ -1,14 +1,15 @@
 class CategoriesController < ApplicationController
   before_action :check_logged, only: [:index, :create, :destroy]
   before_action :find_category_id, only: [:destroy]
+  before_action :load_categories, only: [:index, :create]
 
   def index
-    @categories = current_user.categories.activate.paginate(page: params[:page]).per_page(Settings.user.page)
+    @category = Category.new
   end
 
   def create
-    @categories = current_user.categories.build(category_params)
-    if @categories.save
+    @category = current_user.categories.build(category_params)
+    if @category.save
       flash[:success] = t "category.success"
       redirect_to request.referer || index_path
     else
@@ -30,6 +31,11 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name)
+  end
+
+  def load_categories
+    @categories = current_user.categories.activate.newest.paginate(page: params[:page])
+                              .per_page(Settings.user.page)
   end
 
   def find_category_id
