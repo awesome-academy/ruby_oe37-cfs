@@ -48,6 +48,12 @@ vi:
     list_user: Danh Sách Người Dùng
     not_user: "Không tồn có người dùng"
     no_person: "Không có người nào được hiển thị"
+    user_deleted: "xóa người dùng thành công"
+    account_lockout: "tài khoản bị khóa do %{reason}"
+    download: "Tải Xuống"
+    user: "Người dùng"
+    profile: "Cá nhân"
+    activate: "hoạt động"
   date:
     formats:
       default: "%d-%m-%Y"

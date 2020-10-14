@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show, :edit, :update]
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, except: [:new, :create, :show]
 
   def show; end
@@ -32,11 +32,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if @user.inactive!
+      flash[:success] = t "manger_user.user_deleted"
+      redirect_to admin_users_path
+    else
+      flash.now[:danger] = t "manger_user.failed"
+      render :index
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:full_name, :email, :password,
-                                 :password_confirmation)
+                                 :password_confirmation, :reason)
   end
 
   def find_user

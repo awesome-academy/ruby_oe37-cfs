@@ -25,6 +25,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  enum delete_flag: {activate: 0, inactive: 1}
+  enum role: {admin: 0, user: 1}
   scope :newest, ->{order created_at: :desc}
 
   def self.digest string
@@ -76,6 +78,16 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_send_at < Settings.minutes.minutes.ago
+  end
+
+  def self.to_csv options = {}
+    column_names = %w(full_name email activated created_at update_at)
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.find_each do |user|
+        csv << user.attributes.values_at(*column_names)
+      end
+    end
   end
 
   private
