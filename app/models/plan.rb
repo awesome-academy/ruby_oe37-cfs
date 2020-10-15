@@ -28,4 +28,13 @@ class Plan < ApplicationRecord
   def self.status_option_search
     statuses.map{|key, value| [key.capitalize, value]}
   end
+
+  def self.to_csv options = {}
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.find_each do |plan|
+        csv << plan.attributes.values_at(*column_names)
+      end
+    end
+  end
 end

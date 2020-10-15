@@ -18,6 +18,9 @@ en:
       plan_list: "Plan List"
       status: "Status"
       month: "Month"
+      csv: "CSV"
+      excel: "Excel"
+      moneys: "$%{plan_moneys}"
     header_table:
       category: "Category"
       income_expenses: "Spending type"

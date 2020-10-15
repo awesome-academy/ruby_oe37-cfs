@@ -2,11 +2,13 @@ class PlansController < ApplicationController
   before_action :load_categories, only: %i(new create)
 
   def index
-    @plans = current_user.plans.where_by_status(params[:status]).where_by_month(params[:month]).order(:month)
-
+    @plans = current_user.plans.where_by_status(params[:status])
+      .where_by_month(params[:month]).order(:month)
     respond_to do |format|
       format.html
       format.js
+      format.csv{send_data @plans.to_csv}
+      format.xls
     end
   end
 
