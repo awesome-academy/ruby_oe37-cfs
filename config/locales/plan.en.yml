@@ -1,5 +1,5 @@
 en:
-  plan:
+  plans:
     new:
       create_plan: "Create Plan"
       create_new_plan: "Create New Plan"
@@ -25,3 +25,15 @@ en:
       moneys: "Moneys"
       status: "Status"
       month: "Month"
+    total_table:
+      total_expenses: "Total Expenses Moneys"
+      total_income: "Total Income Moneys"
+      difference: "Difference"
+      summary: "Summary"
+      warning: "Expenses are higher than income. Please balance your finances"
+    expenses:
+      no_data_display: "There's no data to be displayed"
+      expenses_table: "Expenses Table"
+    income:
+      no_data_display: "There's no data to be displayed"
+      income_table: "Income Table"

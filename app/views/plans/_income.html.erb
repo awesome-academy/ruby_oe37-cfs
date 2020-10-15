@@ -1,0 +1,8 @@
+<table class="table table-bordered">
+  <tr class="bg-primary">
+    <th class="text-center" colspan="6"><%= t ".income_table"%></td>
+  </tr>
+  <%= render "header_table" %>
+  <%= render(partial: "plan", collection: @plans.income) ||
+    t(".no_data_display") %>
+</table>

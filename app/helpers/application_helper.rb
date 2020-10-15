@@ -7,4 +7,9 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def number_to_currency(number, options = {precision: 0, locale: :vi})
+    options[:locale] ||= I18n.locale
+    super(number, options)
+  end
 end

@@ -1,6 +1,6 @@
 <% provide :title, t(".view_plan") %>
 
-<%= form_tag plan_index_path, method: :get, remote: true do %>
+<%= form_tag plans_path, method: :get, remote: true do %>
   <div class="col-md-10 col-lg-offset-1">
     <%= label_tag :month, t(".month") %>
     <%= select_tag :month, options_for_select(1..12),
@@ -16,6 +16,11 @@
     <%= submit_tag t(".search"), class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<div id="total_moneys" class="col-md-10 col-lg-offset-1">
+  <%= render "total_table" %>
+</div>
+
 <div>
   <h1 class="col-md-10 col-lg-offset-1 text-center"><%= t ".plan_list" %></h1>
 </div>

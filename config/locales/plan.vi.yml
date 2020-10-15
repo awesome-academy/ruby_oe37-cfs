@@ -1,5 +1,5 @@
 vi:
-  plan:
+  plans:
     new:
       create_plan: "Tạo Kế Hoạch"
       create_new_plan: "Tạo mới kế hoạch"
@@ -25,3 +25,15 @@ vi:
       moneys: "Tiền"
       status: "Trạng thái"
       month: "Tháng"
+    total_table:
+      total_expenses: "Tổng tiền chi"
+      total_income: "Tổng tiền thu"
+      difference: "Chênh lệch"
+      summary: "Thống kê"
+      warning: "Tiền chi đang cao hơn thu. Hãy cân đối tài chính của bạn"
+    expenses:
+      no_data_display: "Không có dữ liệu để hiển thị"
+      expenses_table: "Bảng Chi"
+    income:
+      no_data_display: "Không có dữ liệu để hiển thị"
+      income_table: "Bảng Thu"

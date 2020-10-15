@@ -1,9 +1,9 @@
-class PlanController < ApplicationController
+class PlansController < ApplicationController
   before_action :load_categories, only: %i(new create)
 
   def index
-    @results = current_user.plans.where_by_status(params[:status])
-      .where_by_month(params[:month]).order(:month)
+    @plans = current_user.plans.where_by_status(params[:status]).where_by_month(params[:month]).order(:month)
+
     respond_to do |format|
       format.html
       format.js
