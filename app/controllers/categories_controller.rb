@@ -9,11 +9,15 @@ class CategoriesController < ApplicationController
 
   def create
     @category = current_user.categories.build(category_params)
-    if @category.save
-      flash[:success] = t "category.success"
-      redirect_to request.referer || index_path
+    if @category.valid?
+      if @category.save
+        flash[:success] = t "category.success"
+        redirect_to request.referer || index_path
+      else
+        flash[:danger] = t "category.failed"
+        redirect_to :index_path
+      end
     else
-      flash.now[:danger] = t "category.failed"
       render :index
     end
   end

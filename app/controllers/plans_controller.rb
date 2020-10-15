@@ -18,11 +18,14 @@ class PlansController < ApplicationController
 
   def create
     @plan = current_user.plans.build plan_params
-    if @plan.save
-      flash[:success] = t ".create_successfully"
+    if @plan.valid?
+      if @plan.save
+        flash[:success] = t ".create_successfully"
+      else
+        flash[:danger] = t ".error"
+      end
       redirect_to :new_plan
     else
-      flash.now[:danger] = t ".error"
       render :new
     end
   end
