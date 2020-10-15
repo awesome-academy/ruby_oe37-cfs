@@ -8,6 +8,10 @@ class User < ApplicationRecord
 
   has_many :categories, dependent: :destroy
   has_many :plans, dependent: :destroy
+  has_many :from_user_shares, class_name: "Share",
+    foreign_key: "from_user_id", dependent: :destroy
+  has_many :to_user_shares, class_name: "Share",
+    foreign_key: "to_user_id", dependent: :destroy
 
   validates :full_name, presence: true,
     length: {maximum: Settings.max_full_name}

@@ -1,0 +1,10 @@
+vi:
+  shares:
+    new:
+      month: "Tháng"
+      share_to: "Chia sẻ đến"
+      share: "Chia sẻ"
+      share_plan: "Chia sẻ kế hoạch chi tiêu"
+    create:
+      success: "Đã chia sẽ thành công"
+      fails: "Đã xảy ra lỗi"

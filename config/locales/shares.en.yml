@@ -1,0 +1,10 @@
+en:
+  shares:
+    new:
+      month: "Month"
+      share_to: "Share To"
+      share: "Share"
+      share_plan: "Share Plan"
+    create:
+      success: "Shared successfully"
+      fails: "Error"
