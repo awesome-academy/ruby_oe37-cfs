@@ -1,0 +1,16 @@
+<% provide :title, t(".share_plan") %>
+<h1><%= t ".share_plan" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @share, url: shares_path do |f| %>
+
+      <%= f.label :month, t(".month") %>
+      <%= f.select :month, 1..12, {}, class: "form-control" %>
+
+      <%= f.label :to_user_id, t(".share_to") %>
+      <%= f.collection_select :to_user_id,  get_all_users, :id, :email, {}, class: "form-control" %>
+
+      <%= f.submit t(".share"),  class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

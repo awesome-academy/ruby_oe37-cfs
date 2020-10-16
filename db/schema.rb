@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_09_021405) do
+ActiveRecord::Schema.define(version: 2020_10_15_130944) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 2020_10_09_021405) do
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
+  create_table "shares", force: :cascade do |t|
+    t.integer "month"
+    t.integer "from_user_id", null: false
+    t.integer "to_user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["from_user_id"], name: "index_shares_on_from_user_id"
+    t.index ["to_user_id"], name: "index_shares_on_to_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "full_name"
     t.string "email"
@@ -56,4 +66,6 @@ ActiveRecord::Schema.define(version: 2020_10_09_021405) do
   add_foreign_key "categories", "users"
   add_foreign_key "plans", "categories"
   add_foreign_key "plans", "users"
+  add_foreign_key "shares", "users", column: "from_user_id"
+  add_foreign_key "shares", "users", column: "to_user_id"
 end

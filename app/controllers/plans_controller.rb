@@ -1,6 +1,4 @@
 class PlansController < ApplicationController
-  before_action :load_categories, only: %i(new create)
-
   def index
     @plans = current_user.plans
       .where_by_status(params[:status])
@@ -39,9 +37,5 @@ class PlansController < ApplicationController
                                  :status,
                                  :moneys,
                                  :category_id
-  end
-
-  def load_categories
-    @categories = current_user.categories.activate
   end
 end

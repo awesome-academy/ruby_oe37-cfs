@@ -1,4 +1,8 @@
 module PlansHelper
+  def load_categories
+    @categories = current_user.categories.activate
+  end
+
   def total_income
     @plans.income.sum(:moneys)
   end
