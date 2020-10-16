@@ -4,5 +4,5 @@
   <td scope="row"><%= user.activated %></td>
   <td scope="row"><%= l(user.activated_at, format: :long) %></td>
   <td scope="row"><%= link_to t("manger_user.delete"), user, method: :delete %></td>
-  <td scope="row"><%= link_to t("manger_user.show"), user %></td>
+  <td scope="row"><%= link_to t("manger_user.show"), admin_user_path(current_user) %></td>
 </tr>
