@@ -8,7 +8,6 @@ class User < ApplicationRecord
 
   has_many :categories, dependent: :destroy
   has_many :plans, dependent: :destroy
-  has_many :categories, dependent: :destroy
 
   validates :full_name, presence: true,
     length: {maximum: Settings.max_full_name}

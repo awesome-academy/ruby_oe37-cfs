@@ -21,6 +21,7 @@ vi:
       csv: "CSV"
       excel: "Excel"
       moneys: "$%{plan_moneys}"
+      download: "Tải về :"
     header_table:
       category: "Danh mục"
       income_expenses: "Loại chi tiêu"
@@ -29,6 +30,7 @@ vi:
       status: "Trạng thái"
       month: "Tháng"
     total_table:
+      id: "STT"
       total_expenses: "Tổng tiền chi"
       total_income: "Tổng tiền thu"
       difference: "Chênh lệch"

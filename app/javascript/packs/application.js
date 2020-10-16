@@ -11,6 +11,7 @@ require("jquery")
 require("chartkick")
 require("chart.js")
 require("chartkick").use(require("highcharts"))
+require("export.js")
 import "bootstrap"
 
 // Uncomment to copy all static images under ../images to the output folder and reference
