@@ -7,13 +7,29 @@
     <Worksheet ss:Name="Sheet1">
       <Table>
         <Row>
-          <Cell><Data ss:Type="String">ID</Data></Cell>
-          <Cell><Data ss:Type="String">Month</Data></Cell>
-          <Cell><Data ss:Type="String">Spending type</Data></Cell>
-          <Cell><Data ss:Type="String">Type of money</Data></Cell>
-          <Cell><Data ss:Type="String">Moneys</Data></Cell>
-          <Cell><Data ss:Type="String">Category</Data></Cell>
-          <Cell><Data ss:Type="String">Status</Data></Cell>
+          <Cell><Data ss:Type="String"><%= t("plans.total_table.summary") %></Data></Cell>
+        </Row>
+        <Row>
+          <Cell><Data ss:Type="String"><%= t("plans.total_table.total_income") %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t("plans.total_table.total_expenses") %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t("plans.total_table.difference") %></Data></Cell>
+        </Row>
+        <Row>
+          <Cell><Data ss:Type="Number"><%= total_income %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= total_expenses %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= difference %></Data></Cell>
+        </Row>
+        <Row>
+          <Cell><Data ss:Type="String"><%= t("plans.index.plan_list") %></Data></Cell>
+        </Row>
+        <Row>
+          <Cell><Data ss:Type="String"><%= t("plans.total_table.id") %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t("plans.header_table.month") %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t("plans.header_table.income_expenses") %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t("plans.header_table.fixed_incurred") %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t("plans.header_table.moneys") %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t("plans.header_table.category") %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= t("plans.header_table.status") %></Data></Cell>
         </Row>
         <% @plans.each_with_index do |plan, index| %>
           <Row>

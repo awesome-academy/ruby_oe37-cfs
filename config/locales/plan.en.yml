@@ -21,6 +21,7 @@ en:
       csv: "CSV"
       excel: "Excel"
       moneys: "$%{plan_moneys}"
+      download: "Download:"
     header_table:
       category: "Category"
       income_expenses: "Spending type"
@@ -29,10 +30,11 @@ en:
       status: "Status"
       month: "Month"
     total_table:
+      id: "Code"
       total_expenses: "Total Expenses Moneys"
       total_income: "Total Income Moneys"
       difference: "Difference"
-      summary: "Summary"
+      summary: "Statistics"
       warning: "Expenses are higher than income. Please balance your finances"
     expenses:
       no_data_display: "There's no data to be displayed"

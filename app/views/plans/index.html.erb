@@ -1,9 +1,9 @@
 <% provide :title, t(".view_plan") %>
 <p>
-  Download:
-  <%= link_to t(".csv"), plans_path(format: "csv") %> |
-  <%= link_to t(".excel"), plans_path(format: "xls") %>
+  <%= t(".download") %>
+  <%= link_to t(".excel"), plans_path(format: "xls"), id: "export" %>
 </p>
+<%= javascript_pack_tag "export.js" %>
 <%= form_tag plans_path, method: :get, remote: true do %>
   <div class="col-md-10 col-lg-offset-1">
     <%= label_tag :month, t(".month") %>
@@ -15,7 +15,7 @@
       {include_blank: true, class: "form-control"} %>
   </div>
   <div class="col-md-10 col-lg-offset-1">
-    <%= submit_tag t(".search"), class: "btn btn-primary" %>
+    <%= submit_tag t(".search"), id: "submit", class: "btn btn-primary" %>
   </div>
 <% end %>
 <div id="total_moneys" class="col-md-10 col-lg-offset-1">

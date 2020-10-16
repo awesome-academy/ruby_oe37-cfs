@@ -8,7 +8,6 @@ class PlansController < ApplicationController
     respond_to do |format|
       format.html
       format.js
-      format.csv{send_data @plans.to_csv}
       format.xls
     end
   end
