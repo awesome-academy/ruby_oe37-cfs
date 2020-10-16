@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
-  before_action :check_logged, only: [:index, :create, :destroy]
-  before_action :find_category_id, only: [:destroy]
-  before_action :load_categories, only: [:index, :create]
+  before_action :check_logged, only: %i(index create destroy)
+  before_action :find_category_id, only: :destroy
+  before_action :load_categories, only: %i(index create)
 
   def index
     @category = Category.new
@@ -38,8 +38,8 @@ class CategoriesController < ApplicationController
   end
 
   def load_categories
-    @categories = current_user.categories.activate.newest.paginate(page: params[:page])
-                              .per_page(Settings.user.page)
+    @categories = current_user.categories.activate.newest
+      .paginate(page: params[:page]).per_page(Settings.user.page)
   end
 
   def find_category_id
