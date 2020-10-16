@@ -6,10 +6,16 @@ class Plan < ApplicationRecord
   enum type_money: {fixed: 0, incurred: 1}
   enum status: {confirm: 0, unconfirm: 1}
 
-  scope :where_by_month, ->(param_month){where(month: param_month) if param_month.present?}
-  scope :where_by_status, ->(param_status){where(status: param_status) if param_status.present?}
+  validates :moneys, presence: true,
+    numericality: {greater_than_or_equal_to: Settings.min_money}
 
-  validates :moneys, numericality: {greater_than_or_equal_to: Settings.min_money}, presence: true
+  scope :where_by_month, (lambda do |param_month|
+    where(month: param_month) if param_month.present?
+  end)
+
+  scope :where_by_status, (lambda do |param_status|
+    where(status: param_status) if param_status.present?
+  end)
 
   delegate :name, to: :category, prefix: :category, allow_nil: true
 
