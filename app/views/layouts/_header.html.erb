@@ -12,9 +12,10 @@
               <%= t ".plan" %> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to t(".newplan"), new_plan_path %></li>
-              <li><%= link_to t(".viewplan"), plans_path %></li>
+              <li><%= link_to t(".new_plan"), new_plan_path %></li>
+              <li><%= link_to t(".view_plan"), plans_path %></li>
               <li><%= link_to t(".share_plan"), new_share_path %></li>
+              <li><%= link_to t(".view_shared"), shares_path %></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -23,7 +24,6 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to t(".settings"), edit_user_path(current_user) %></li>
-              <li class="divider"></li>
               <li><%= link_to t(".signout"),
               logout_path, method: :delete %>
               </li>

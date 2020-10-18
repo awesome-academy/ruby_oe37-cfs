@@ -8,3 +8,9 @@ en:
     create:
       success: "Shared successfully"
       fails: "Error"
+    index:
+      search: "Search"
+      view_plan_shared: "View Plan Shared"
+      from_user: "From user"
+      month: "Month"
+      plan_list: "Plans"

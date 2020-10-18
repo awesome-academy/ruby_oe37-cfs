@@ -17,6 +17,10 @@ class Plan < ApplicationRecord
     where(status: param_status) if param_status.present?
   end)
 
+  scope :where_by_user_id, (lambda do |param_user_id|
+    where(user_id: param_user_id) if param_user_id.present?
+  end)
+
   delegate :name, to: :category, prefix: :category, allow_nil: true
 
   def self.spending_category_option

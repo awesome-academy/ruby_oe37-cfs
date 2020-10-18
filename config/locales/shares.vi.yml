@@ -8,3 +8,9 @@ vi:
     create:
       success: "Đã chia sẽ thành công"
       fails: "Đã xảy ra lỗi"
+    index:
+      search: "Tìm kiếm"
+      view_plan_shared: "Kế Hoạch Được Chia Sẻ"
+      from_user: "Từ người dùng"
+      month: "Tháng"
+      plan_list: "Bảng Kế Hoạch"
