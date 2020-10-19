@@ -38,7 +38,7 @@ class CategoriesController < ApplicationController
   end
 
   def find_category_id
-    @category = current_user.categories.find_by id: params[:id]
+    @category = Category.find_by id: params[:id]
     return if @category
 
     flash[:warning] = t "category.error"

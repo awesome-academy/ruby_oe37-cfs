@@ -39,7 +39,7 @@ vi:
     edit_fail: "Cập nhật hồ sơ không thành công"
   manger_user:
     delete: "Xóa"
-    show: "Hiển thị"
+    show: "Hiển thị danh mục"
     index: "Số Stt"
     full_name: "Họ và Tên"
     email: "Email"
@@ -54,6 +54,7 @@ vi:
     user: "Người dùng"
     profile: "Cá nhân"
     activate: "hoạt động"
+    you_sure: "Bạn chắc chắn?"
   date:
     formats:
       default: "%d-%m-%Y"
