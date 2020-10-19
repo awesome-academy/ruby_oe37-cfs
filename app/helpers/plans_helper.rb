@@ -1,6 +1,6 @@
 module PlansHelper
   def load_categories
-    @categories = current_user.categories.activate
+    @categories = current_user.categories.activate.newest
   end
 
   def total_income

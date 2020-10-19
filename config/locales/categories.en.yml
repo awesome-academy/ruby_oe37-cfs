@@ -10,3 +10,5 @@ en:
     namee: "Name list"
     indexx: "Order"
     error: "not found"
+    no_categories: "No categories to display"
+    list: "List categories"

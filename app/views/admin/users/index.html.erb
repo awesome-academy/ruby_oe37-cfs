@@ -1,18 +1,23 @@
-<br/>
-<h1><%= t("manger_user.list_user") %></h1>
-<div class="col-md-10 col-lg-offset-1">
-  <table class="table table-bordered">
-    <tr class="bg-primary">
-      <th class="text-center col-md-2"><%= t("manger_user.full_name") %></th>
-      <th class="text-center col-md-3"><%= t("manger_user.email") %></th>
-      <th class="text-center col-md-4"><%= t("manger_user.activated") %></th>
-      <th class="text-center col-md-5"><%= t("manger_user.activated_at") %></th>
-      <th class="text-center col-md-6"></th>
-      <th class="text-center col-md-6"></th>
-    </tr>
-    <%= render(partial: "list_user", collection: @users, as: :user) || t("manger_user.no_person") %>
-  </table>
-  <div id="paginator">
-    <%= paginate @users %>
+<% if @categories.present? %>
+  <h1><%= t("category.list") %></h1>
+  <%= render "shared/list_categories", object: @categories || t(".no_categories") %>
+<% else %>
+  <br/>
+  <h1><%= t("manger_user.list_user") %></h1>
+  <div class="col-md-10 col-lg-offset-1">
+    <table class="table table-bordered">
+      <tr class="bg-primary">
+        <th class="text-center col-md-2"><%= t("manger_user.full_name") %></th>
+        <th class="text-center col-md-3"><%= t("manger_user.email") %></th>
+        <th class="text-center col-md-4"><%= t("manger_user.activated") %></th>
+        <th class="text-center col-md-5"><%= t("manger_user.activated_at") %></th>
+        <th class="text-center col-md-6"></th>
+        <th class="text-center col-md-6"></th>
+      </tr>
+      <%= render(partial: "list_user", collection: @users, as: :user) || t("manger_user.no_person") %>
+    </table>
+    <div id="paginator">
+      <%= paginate @users %>
+    </div>
   </div>
-</div>
+<%end%>

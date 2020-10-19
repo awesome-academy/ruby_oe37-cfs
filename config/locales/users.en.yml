@@ -13,7 +13,7 @@ en:
     in_active: "Invalid activation link"
     content_title: "My Cash FLow"
     hi: "Hi"
-    content: "Welcome to the Sample App! Click on the link below to activate your account:"
+    content: "Welcome to the My Cash FLow! Click on the link below to activate your account:"
     activate: "Activate"
     mailer: "Account activation"
     reset_pass: "Reset password"
