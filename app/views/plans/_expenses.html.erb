@@ -2,6 +2,6 @@
   <tr class="bg-primary">
     <th class="text-center" colspan="6"><%= t ".expenses_table"%></td>
   </tr>
-  <%= render "header_table" %>
-  <%= render(partial: "plan", collection: @plans.expenses) || t(".no_data_display") %>
+  <%= render "/plans/header_table" %>
+  <%= render(partial: "/plans/plan", collection: @plans.expenses) || t(".no_data_display") %>
 </table>

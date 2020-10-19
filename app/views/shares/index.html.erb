@@ -1,0 +1,28 @@
+<% provide :title, t(".view_plan_shared") %>
+<h1><%= t ".view_plan_shared" %></h1>
+<%= form_tag shares_path, method: :get, remote: true,
+  autocomplete: :off do %>
+  <div class="col-md-10 col-lg-offset-1">
+    <%= label :user_id, t(".from_user") %>
+    <%= select_tag :user_id,
+      options_for_select(users_shared_option),
+      {include_blank: true, class: "form-control"}%>
+
+    <%= label_tag :month, t(".month") %>
+    <%= select_tag :month, {}, class: "form-control" %>
+  </div>
+  <div class="col-md-10 col-lg-offset-1">
+    <%= submit_tag t(".search"), class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<div>
+  <h1 class="col-md-10 col-lg-offset-1 text-center"><%= t ".plan_list" %></h1>
+</div>
+<div id="expenses_shared" class="col-md-10 col-lg-offset-1">
+  <%= render "/plans/expenses" %>
+</div>
+<div id="income_shared" class="col-md-10 col-lg-offset-1">
+  <%= render "/plans/income" %>
+</div>
+<%= javascript_pack_tag "load_month_by_user" %>
