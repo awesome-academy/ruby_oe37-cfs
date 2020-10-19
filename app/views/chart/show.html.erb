@@ -1,3 +1,27 @@
-<%= line_chart Plan.group(:type_money).group_by_day(:month).sum(:moneys),
-  xtitle: "month", ytitle: "moneys", title: I18n.t("chart.title_chart"),
-    download: {background: "#ffffff"}, messages: {empty: t("chart.no_data")}%>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <%= column_chart @income,
+                        xtitle: t("chart.month"), ytitle: t("chart.moneys"), title: I18n.t("chart.title_icome"),
+                        download: {background: "#ffffff"}, messages: {empty: t("chart.no_data")}%>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
+</br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <%= column_chart @expenses,
+                        xtitle: t("chart.month"), ytitle: t("chart.moneys"), title: I18n.t("chart.title_expenses"),colors: ["#b00", "#666"],
+                        download: {background: "#ffffff"}, messages: {empty: t("chart.no_data")}%>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>

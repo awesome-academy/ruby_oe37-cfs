@@ -24,5 +24,8 @@ vi:
         home: "Trang chủ"
         welcome: "Xin Chào"
   chart:
-    title_chart: "Biểu đồ thu nhập và chi tiêu"
+    title_icome: "Biểu đồ thu nhập"
     no_data: "không có dữ liệu"
+    title_expenses: "Biểu đồ cho thấy các chi phí"
+    month: "Tháng"
+    moneys: "Tiền"

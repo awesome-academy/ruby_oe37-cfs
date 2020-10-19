@@ -24,5 +24,8 @@ en:
       home: "Home"
       welcome: "Welcome"
   chart:
-    title_chart: "Graph of income and expenditure"
+    title_icome: "Graph showing income"
     no_data: No data
+    title_expenses: "The graph shows the expenses"
+    month: "Month"
+    moneys: "Moneys"
