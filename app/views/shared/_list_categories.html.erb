@@ -3,13 +3,19 @@
     <tr class="bg-primary">
       <th class="text-center col-md-1"><%= t("category.indexx") %></th>
       <th class="text-center col-md-3"><%= t("category.namee") %></th>
-      <th class="text-center col-md-3"></th>
+      <th class="text-center col-md-3"><%= t("category.actions") %></th>
     </tr>
-    <% object.each_with_index do |item, index| %>
+    <% if object.present? %>
+      <% object.each_with_index do |item, index| %>
+        <tr class="bg-success">
+          <td><%= create_index params[:page], index, Settings.user.page %></td>
+          <td scope="row"><%= item.name %></td>
+          <td scope="row"><%= link_to t("category.submit_delete"), item, method: :delete, data: { confirm: t("category.you_sure") } %></td>
+        </tr>
+      <% end %>
+    <% else %>
       <tr class="bg-success">
-        <td><%= create_index params[:page], index, Settings.user.page %></td>
-        <td scope="row"><%= item.name %></td>
-        <td scope="row"><%= link_to t("category.submit_delete"), item, method: :delete, data: { confirm: t("category.you_sure") } %></td>
+        <td colspan="3"><%= t("category.no_categories") %></td>
       </tr>
     <% end %>
   </table>

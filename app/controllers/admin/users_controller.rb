@@ -13,7 +13,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
-    load_categories_of_user
-    render :index
+    @categories = Category.where(user_id: params[:id]).newest.activate
+      .paginate(page: params[:page]).per_page(Settings.user.page)
   end
 end

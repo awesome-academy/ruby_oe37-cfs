@@ -38,7 +38,7 @@ class SessionsController < ApplicationController
   def find_email
     return if @user = User.find_by(email: params[:session][:email].downcase)
 
-    flash[:danger] = t "manger_user.not_user"
+    flash[:danger] = t "login.invalid"
     redirect_to root_url
   end
 

@@ -40,7 +40,7 @@ en:
     edit_fail: "Profile update failed"
   manger_user:
     delete: "Delete"
-    show: "Show"
+    show: "Show Categories"
     index: "Index"
     full_name: "Full Name"
     email: "Email"
@@ -55,3 +55,9 @@ en:
     user: "User"
     profile: "Profile"
     activate: "activate"
+    you_sure: "You sure?"
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      long: "%d %B, %Y"
+      short: "%d %b"
