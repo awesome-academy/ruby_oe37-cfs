@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
-  before_action :find_email, only: [:create, :check_active]
   before_action :check_session, only: [:create]
+  before_action :check_logged, except: [:new, :create]
+  before_action :find_email, only: [:create, :check_active]
+
   def new; end
 
   def create
@@ -44,5 +46,8 @@ class SessionsController < ApplicationController
 
   def check_session
     @user = @user&.authenticate(params[:session][:password])
+    return if @user.blank?
+
+    redirect_to root_path
   end
 end
