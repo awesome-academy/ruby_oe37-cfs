@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
+  before_action :find_email, only: [:create]
   before_action :check_session, only: [:create]
-  before_action :check_logged, except: [:new, :create]
-  before_action :find_email, only: [:create, :check_active]
+  before_action :check_logged, except: [:new, :create, :check_session]
 
   def new; end
 
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       check_active
     elsif @user&.inactive?
       flash.now[:danger] =
-        t "manger_user.account_lockout", reason: @user.reason
+        t "manger_user.account_lockout"
       render :new
     else
       flash.now[:danger] = t "login.invalid"
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   def destroy
     log_out
     flash[:success] = t "login.logged_out"
-    redirect_to root_url
+    redirect_to login_path
   end
 
   private
@@ -40,14 +40,15 @@ class SessionsController < ApplicationController
   def find_email
     return if @user = User.find_by(email: params[:session][:email].downcase)
 
-    flash[:danger] = t "login.invalid"
-    redirect_to root_url
+    flash[:danger] = t "manger_user.not_user"
+    redirect_to login_path
   end
 
   def check_session
     @user = @user&.authenticate(params[:session][:password])
-    return if @user.blank?
+    return if @user.present?
 
-    redirect_to root_path
+    flash[:danger] = t "login.invalid"
+    redirect_to login_path
   end
 end
