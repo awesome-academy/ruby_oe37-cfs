@@ -1,10 +1,12 @@
 class SessionsController < ApplicationController
-  before_action :find_email, only: [:create, :check_active]
   before_action :check_session, only: [:create]
+  before_action :find_email, only: [:create, :check_active]
+  before_action :check_logged, except: [:new, :create]
+
   def new; end
 
   def create
-    if @user&.activate?
+    if @user&.authenticate params[:session][:password]
       check_active
     elsif @user&.inactive?
       flash.now[:danger] =
@@ -38,11 +40,14 @@ class SessionsController < ApplicationController
   def find_email
     return if @user = User.find_by(email: params[:session][:email].downcase)
 
-    flash[:danger] = t "login.invalid"
-    redirect_to root_url
+    flash[:danger] = t "manger_user.not_user"
+    redirect_to login_path
   end
 
   def check_session
     @user = @user&.authenticate(params[:session][:password])
+    return if @user.blank?
+
+    redirect_to root_path
   end
 end

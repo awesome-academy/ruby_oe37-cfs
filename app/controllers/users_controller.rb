@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
+  before_action :check_logged, except: [:new, :create]
   before_action :find_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, except: [:new, :create, :show]
 
   def show; end
 
@@ -59,12 +59,5 @@ class UsersController < ApplicationController
 
   def admin_user
     redirect_to(root_url) unless current_user.role?
-  end
-
-  def logged_in_user
-    return if logged_in?
-
-    flash[:danger] = t "login_in.please_log_in"
-    redirect_to login_url
   end
 end

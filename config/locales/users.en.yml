@@ -50,7 +50,7 @@ en:
     not_user: "Not User"
     no_person: "There's no person to be displayed"
     user_deleted: "successfully deleted the user"
-    account_lockout: "the account is locked due to %{reason}"
+    account_lockout: "the account is locked due "
     download: "Download:"
     user: "User"
     profile: "Profile"

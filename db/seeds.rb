@@ -24,8 +24,8 @@ users = User.order(:created_at).take(6)
   users.each { |user| user.categories.create!(name: name) }
 end
 
-99.times do
-  created_at = Faker::Time.between_dates(from: 10.month.ago, to: 20.month.ago, period: :all)
+500.times do
+
   Plan.create!(
     month: rand(1..12),
     category_id: rand(1..5),
@@ -34,6 +34,6 @@ end
     status: rand(0..1),
     moneys: rand(1000..10000),
     user_id: rand(1..10),
-    created_at: created_at
+
   )
 end
