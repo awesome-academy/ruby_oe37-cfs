@@ -1,7 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :find_email, only: [:create]
-  before_action :check_session, only: [:create]
-  before_action :check_logged, except: [:new, :create, :check_session]
+  before_action :find_email, :check_session, only: :create
 
   def new; end
 
@@ -33,7 +31,7 @@ class SessionsController < ApplicationController
       redirect_back_or @user
     else
       flash[:warning] = t "login.not_active"
-      redirect_to root_url
+      redirect_to login_url
     end
   end
 
