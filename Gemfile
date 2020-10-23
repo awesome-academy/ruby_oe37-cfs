@@ -16,6 +16,7 @@ gem "image_processing", "1.9.3"
 gem "jbuilder", "~> 2.7"
 gem "kaminari"
 gem "mini_magick", "4.9.5"
+gem "mysql2", ">= 0.4.4"
 gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.3"
 gem "rails-i18n"
@@ -27,10 +28,12 @@ gem "will_paginate", "3.1.8"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails"
   gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
+  gem "shoulda-matchers", "~> 4.0"
 end
 
 group :development do
@@ -42,7 +45,11 @@ end
 
 group :test do
   gem "capybara", ">= 2.15"
+  gem "database_cleaner"
+  gem "rails-controller-testing"
   gem "selenium-webdriver"
+  gem "simplecov", require: false
+  gem "simplecov-rcov"
   gem "webdrivers"
 end
 

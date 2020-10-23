@@ -1,33 +1,30 @@
 class CategoriesController < ApplicationController
   before_action :find_category_id, only: :destroy
-  before_action :load_categories_of_user, only: %i(index create)
 
   def index
-    @category = Category.new
+    @categories = current_user.categories.activate.newest
+      .paginate(page: params[:page]).per_page(Settings.user.page)
   end
 
   def create
     @category = current_user.categories.build(category_params)
-    if @category.valid?
-      if @category.save
-        flash[:success] = t "category.success"
-        redirect_to request.referer || index_path
-      else
-        flash[:danger] = t "category.failed"
-        redirect_to :index_path
-      end
-    else
-      render :index
+    @error_name = []
+
+    return if @category.save
+
+    @category.errors.any?
+    @error_name.push(@category.errors["name"][0]) if
+      @category.errors["name"].present?
+
+    respond_to do |format|
+      format.js
     end
   end
 
   def destroy
-    if @category.inactive!
-      flash[:success] = t "category.deleted"
-    else
-      flash[:danger] = t "category.failed"
-    end
-    redirect_to request.referer || index_path
+    @category.inactive!
+    flash[:success] = t "category.deleted"
+    redirect_to categories_path
   end
 
   private

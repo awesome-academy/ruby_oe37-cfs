@@ -1,0 +1,6 @@
+<% if @category.errors.any? %>
+$("#nameBlock").append('<div class="notice"><span class="text-danger"><%= escape_javascript(@error_name[0])%></span>');
+$("#nameBlock:contains(.)").closest(".form-group").addClass("has-error");
+<% else %>
+$("#nameBlock").append('<div class="notice"><span class="text-success">Create category successfully</span>');
+<% end %>
