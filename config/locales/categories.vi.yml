@@ -1,8 +1,8 @@
 vi:
   category:
-    title: "Tạo Danh Mục"
+    title: "Danh Sách Danh Mục"
     submit: "Tạo"
-    success: "Thành công"
+    success: "Tạo mới danh mục thành công"
     failed: "Thao tác không thành công"
     deleted: "Xóa Thành công"
     submit_delete: "Xóa"

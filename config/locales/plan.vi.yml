@@ -9,6 +9,7 @@ vi:
       moneys: "Tiền"
       status: "Trạng thái"
       month: "Tháng"
+      create_new_category: "Bấm vào đây để tạo mới danh mục"
     create:
       create_successfully: "Tạo mới thành công"
       error: "Lỗi"

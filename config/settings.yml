@@ -4,3 +4,8 @@ min_pass: 6
 minutes: 3
 max_name: 255
 min_money: 1000
+page: 1
+user:
+  password: 3
+  email: 250
+  page: 5

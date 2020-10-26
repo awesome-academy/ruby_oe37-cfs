@@ -12,6 +12,7 @@ class PlansController < ApplicationController
 
   def new
     @plan = Plan.new
+    @category = Category.new
   end
 
   def create

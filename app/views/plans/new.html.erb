@@ -1,7 +1,8 @@
 <% provide :title, t(".create_plan") %>
+
 <h1><%= t ".create_plan" %></h1>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="test col-md-6 col-md-offset-3">
     <%= form_for @plan, url: plans_path do |f| %>
       <%= render "shared/error_messages", object: @plan %>
 
@@ -12,6 +13,7 @@
       <%= f.select :month, 1..12, {}, class: "form-control" %>
 
       <%= f.label :category, t(".category") %>
+      <%= link_to t(".create_new_category"), "#", :data => {:toggle => "modal", :target => "#myModal"} %>
       <%= f.collection_select :category_id,  load_categories, :id, :name, {}, class: "form-control" %>
 
       <%= f.label :spending_category, t(".income_expenses") %>
@@ -30,3 +32,6 @@
     <% end %>
   </div>
 </div>
+
+<%= render "new_category_dialog" %>
+<%= javascript_pack_tag "reset_modal" %>

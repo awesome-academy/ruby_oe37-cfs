@@ -1,8 +1,8 @@
 en:
   category:
-    title: "Create Categories"
+    title: "List Categories"
     submit: "Submit"
-    success: "Success"
+    success: "Create new category successfully"
     failed: "Manipulation failed"
     deleted: "Deleted Successfully"
     submit_delete: "Delete"

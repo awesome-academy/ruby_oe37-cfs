@@ -9,6 +9,7 @@ en:
       moneys: "Moneys"
       status: "Status"
       month: "Month"
+      create_new_category: "Click here for create new category"
     create:
       create_successfully: "Create Successfully"
       error: "Error"
