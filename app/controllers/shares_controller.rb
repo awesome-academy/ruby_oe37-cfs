@@ -21,7 +21,7 @@ class SharesController < ApplicationController
       redirect_to :new_share
     else
       flash.now[:danger] = t ".fails"
-      render :new_share
+      render :new
     end
   end
 
