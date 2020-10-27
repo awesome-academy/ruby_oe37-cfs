@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+  before_action :initialize_category, only: %i(new create)
   def index
     @plans = current_user.plans
       .where_by_status(params[:status])
@@ -12,17 +13,12 @@ class PlansController < ApplicationController
 
   def new
     @plan = Plan.new
-    @category = Category.new
   end
 
   def create
     @plan = current_user.plans.build plan_params
-    if @plan.valid?
-      if @plan.save
-        flash[:success] = t ".create_successfully"
-      else
-        flash[:danger] = t ".error"
-      end
+    if @plan.save
+      flash[:success] = t ".create_successfully"
       redirect_to :new_plan
     else
       render :new
@@ -38,5 +34,9 @@ class PlansController < ApplicationController
                                  :status,
                                  :moneys,
                                  :category_id
+  end
+
+  def initialize_category
+    @category = Category.new
   end
 end

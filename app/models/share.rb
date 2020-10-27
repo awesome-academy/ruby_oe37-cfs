@@ -9,6 +9,4 @@ class Share < ApplicationRecord
   scope :where_by_to_user_id, (lambda do |param_to_user_id|
     where(to_user_id: param_to_user_id) if param_to_user_id.present?
   end)
-
-  delegate :email, to: :user, allow_nil: true
 end
