@@ -12,7 +12,6 @@ FactoryBot.define do
     trait :admin do
       role {User.roles[:admin]}
     end
-    activated {:true}
-    activated_at {DateTime.now}
+    confirmed_at {DateTime.now}
   end
 end

@@ -1,0 +1,38 @@
+<% provide :title, t("form.signup") %>
+<h1 class="center"><%= t("form.signup") %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 spacing">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :fullname, t("form.full_name") %><br />
+        <%= f.text_field :full_name, class: "form-control", autofocus: true, autocomplete: "fullname" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, t("form.pass") %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, t("form.pass_c") %><br />
+        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 class PlansController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @plans = current_user.plans
       .where_by_status(params[:status])

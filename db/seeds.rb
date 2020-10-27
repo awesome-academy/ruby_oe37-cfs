@@ -3,8 +3,7 @@ User.create!(full_name: "Admin",
             password: "123456",
             password_confirmation: "123456",
             role: 0,
-            activated: true,
-            activated_at: DateTime.now)
+            confirmed_at: DateTime.now)
 
 20.times do |n|
   name = Faker::Name.name
@@ -14,8 +13,7 @@ User.create!(full_name: "Admin",
               email: email,
               password: password,
               password_confirmation: password,
-              activated: true,
-              activated_at: DateTime.now)
+              confirmed_at: DateTime.now)
 end
 
 users = User.order(:created_at).take(6)
