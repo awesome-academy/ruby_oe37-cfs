@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :find_category_id, only: :destroy
+  before_action :authenticate_user!
 
   def index
     @categories = current_user.categories.activate.newest

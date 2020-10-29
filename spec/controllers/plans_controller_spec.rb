@@ -7,7 +7,7 @@ RSpec.describe PlansController, type: :controller do
   let(:valid_params) {FactoryBot.attributes_for :plan, user_id: user.id, category_id: category.id}
   let(:invalid_params) {FactoryBot.attributes_for :plan, user_id: user.id, category_id: category.id, moneys: 10}
 
-  before {login user}
+  before {login_user user}
   describe "GET #index" do
     before {get :index, params:{status: "", month: ""}}
 

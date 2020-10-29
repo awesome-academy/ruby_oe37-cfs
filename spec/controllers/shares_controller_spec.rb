@@ -13,7 +13,7 @@ RSpec.describe SharesController, type: :controller do
   let(:valid_params) {FactoryBot.attributes_for :share, to_user_id: first_user.id, month: 11}
   let(:invalid_params) {FactoryBot.attributes_for :share, to_user_id: nil, month: 11}
 
-  before {login second_user}
+  before {login_user second_user}
 
   describe "GET #index" do
     before {get :index, params:{user_id: first_user.id, month: 10}, xhr: true}

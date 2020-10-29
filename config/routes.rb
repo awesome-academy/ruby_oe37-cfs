@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-    root "static_pages#home"
+    root to: "static_pages#home"
+    devise_for :users, skip: :omniauth_callbacks, controllers: {
+        confirmations: "users/confirmations"
+      }
     get "/home", to: "static_pages#home"
-    get "/signup", to: "users#new"
-    get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
     resources :users
     resources :chart
     resources :account_activations, only: [:edit]
@@ -18,7 +17,9 @@ Rails.application.routes.draw do
       end
     end
     namespace :admin do
+      root "static_pages#admin"
       resources :users, only: [:index, :show]
     end
   end
+  devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
 end

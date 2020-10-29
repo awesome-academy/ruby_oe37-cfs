@@ -1,12 +1,13 @@
 require "rails_helper"
 
 RSpec.describe CategoriesController, type: :controller do
-  let(:user) {FactoryBot.create(:user, :user)}
+  let(:user) {FactoryBot.create :user}
   let!(:first_category) {FactoryBot.create :category, user_id: user.id}
   let!(:second_category) {FactoryBot.create :category, user_id: user.id}
   let(:valid_params) {FactoryBot.attributes_for :category, user_id: user.id}
   let(:invalid_params) {FactoryBot.attributes_for :category, name: nil}
-  before {login user}
+  # before {login user}
+  before {login_user user}
   describe "GET #index" do
     before {get :index, params: {page: 1}}
     it "renders the index template" do
