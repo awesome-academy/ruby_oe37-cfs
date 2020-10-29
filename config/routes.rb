@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
     namespace :admin do
       root "static_pages#admin"
-      resources :users, only: [:index, :show]
+      resources :users, only: [:index, :show, :destroy]
     end
   end
   devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
