@@ -32,6 +32,13 @@ class PlansController < ApplicationController
     end
   end
 
+  def reload_categories
+    categories = current_user.categories.activate.newest
+    respond_to do |format|
+      format.json{render json: categories}
+    end
+  end
+
   private
 
   def plan_params
