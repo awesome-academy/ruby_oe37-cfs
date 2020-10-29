@@ -4,8 +4,9 @@ RSpec.describe PlansController, type: :controller do
   let(:user) {FactoryBot.create :user}
   let(:category) {FactoryBot.create :category}
   let!(:plans) {FactoryBot.create_list :plan, 10, user_id: user.id, category_id: category.id}
-  let(:valid_params) {FactoryBot.attributes_for :plan, user_id: user.id, category_id: category.id}
+  let(:valid_params) {FactoryBot.attributes_for :plan, user_id: user.id, category_id: category.id, spending_category: "income"}
   let(:invalid_params) {FactoryBot.attributes_for :plan, user_id: user.id, category_id: category.id, moneys: 10}
+  let(:expenses_params) {FactoryBot.attributes_for :plan, user_id: user.id, category_id: category.id, moneys: 6000, spending_category: "expenses"}
 
   before {login_user user}
   describe "GET #index" do
@@ -53,6 +54,19 @@ RSpec.describe PlansController, type: :controller do
       it "renders the index template" do
         expect(subject).to render_template :new
       end
+    end
+
+    context "with expenses > balance" do
+      before {post :create, params: {plan: expenses_params}}
+      subject {post :create, params: {plan: expenses_params}}
+      it "display success message" do
+        expect(flash[:alert]).to be_present
+      end
+
+      it "render :new" do
+        expect(subject).to render_template :new
+      end
+
     end
   end
 end
