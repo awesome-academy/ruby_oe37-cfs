@@ -60,7 +60,7 @@ RSpec.describe PlansController, type: :controller do
       before {post :create, params: {plan: expenses_params}}
       subject {post :create, params: {plan: expenses_params}}
       it "display success message" do
-        expect(flash[:alert]).to be_present
+        expect(flash.now[:alert]).to be_present
       end
 
       it "render :new" do
