@@ -4,6 +4,12 @@ User.create!(full_name: "Admin",
             password_confirmation: "123456",
             role: 0,
             confirmed_at: DateTime.now)
+User.create!(full_name: "member",
+            email:"member@gmail.com",
+            password: "123456",
+            password_confirmation: "123456",
+            role: 2,
+            confirmed_at: DateTime.now)
 
 10.times do |n|
   User.create!(full_name: Faker::FunnyName.name,

@@ -25,7 +25,7 @@ class User < ApplicationRecord
     allow_nil: true
 
   enum delete_flag: {activate: 0, inactive: 1}
-  enum role: {admin: 0, user: 1}
+  enum role: {admin: 0, user: 1, member: 2}
   scope :newest, ->{order created_at: :desc}
 
   def self.to_csv options = {}
