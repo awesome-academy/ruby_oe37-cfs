@@ -5,6 +5,8 @@ require File.expand_path("../config/environment", __dir__)
 require "support/spec_test_helper"
 require "rspec/rails"
 require "shoulda/matchers"
+require "sidekiq/testing"
+Sidekiq::Testing.fake!
 
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 

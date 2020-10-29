@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  require "sidekiq/web"
+  mount Sidekiq::Web, at: "/sidekiq"
   scope "(:locale)", locale: /en|vi/ do
     root to: "static_pages#home"
     devise_for :users, skip: :omniauth_callbacks, controllers: {
@@ -24,6 +26,7 @@ Rails.application.routes.draw do
       root "static_pages#admin"
       resources :users, only: [:index, :show, :destroy]
     end
+
   end
   devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
 end

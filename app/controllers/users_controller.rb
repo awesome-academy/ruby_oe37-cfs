@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def update
     @user.member!
     flash[:notice] = t "edit.edit_success"
+    SendMailUpgradeWorker.perform_async @user.id
     redirect_to root_path
   end
 
