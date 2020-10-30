@@ -3,19 +3,14 @@ User.create!(full_name: "Admin",
             password: "123456",
             password_confirmation: "123456",
             role: 0,
-            activated: true,
-            activated_at: DateTime.now)
+            confirmed_at: DateTime.now)
 
-20.times do |n|
-  name = Faker::Name.name
-  email = "user#{n+1}@gmail.com"
-  password = "123456"
-  User.create!(full_name: name,
-              email: email,
-              password: password,
-              password_confirmation: password,
-              activated: true,
-              activated_at: DateTime.now)
+10.times do |n|
+  User.create!(full_name: Faker::FunnyName.name,
+              email: "user#{n+1}@gmail.com",
+              password: "123456",
+              password_confirmation: "123456",
+              confirmed_at: DateTime.now)
 end
 
 users = User.order(:created_at).take(6)
@@ -33,7 +28,5 @@ end
     type_money: rand(0..1),
     status: rand(0..1),
     moneys: rand(1000..10000),
-    user_id: rand(1..10),
-
-  )
+    user_id: rand(1..10))
 end

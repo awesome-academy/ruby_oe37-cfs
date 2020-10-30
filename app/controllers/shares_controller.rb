@@ -1,4 +1,5 @@
 class SharesController < ApplicationController
+  before_action :authenticate_user!
   def index
     return @plans = Plan.none if params[:user_id].blank?
 

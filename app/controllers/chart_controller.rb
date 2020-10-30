@@ -1,5 +1,6 @@
 class ChartController < ApplicationController
   before_action :find_plan_id_user, only: [:show, :index]
+  before_action :authenticate_user!
 
   def index; end
 
