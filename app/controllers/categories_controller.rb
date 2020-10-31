@@ -9,25 +9,22 @@ class CategoriesController < ApplicationController
   def create
     @category = current_user.categories.build(category_params)
     if @category.valid?
-      if @category.save
-        flash[:success] = t "category.success"
-        redirect_to request.referer || index_path
-      else
-        flash[:danger] = t "category.failed"
-        redirect_to :index_path
-      end
+      @category.save
+      flash[:success] = t "category.success"
+      redirect_to request.referer || categories_path
     else
       render :index
     end
   end
 
   def destroy
-    if @category.inactive!
+    if @category.activate?
+      @category.inactive!
       flash[:success] = t "category.deleted"
     else
       flash[:danger] = t "category.failed"
     end
-    redirect_to request.referer || index_path
+    redirect_to categories_path
   end
 
   private
