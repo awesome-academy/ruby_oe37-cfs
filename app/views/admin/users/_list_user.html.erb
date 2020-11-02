@@ -2,6 +2,6 @@
   <td scope="row"><%= user.full_name %></td>
   <td scope="row"><%= user.email %></td>
   <td scope="row"><%= localize(user.confirmed_at, format: :long, default: "unconfirm") %></td>
-  <td scope="row"><%= link_to t("manger_user.delete"), user, method: :delete, data: { confirm: t("manger_user.you_sure") } %></td>
+  <td scope="row"><%= link_to t("manger_user.delete"), admin_user_path(user), method: :delete, data: { confirm: t("manger_user.you_sure") } %></td>
   <td scope="row"><%= link_to t("manger_user.show"), admin_user_path(user) %></td>
 </tr>

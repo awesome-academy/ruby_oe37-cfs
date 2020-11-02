@@ -4,18 +4,19 @@
   <%= link_to t(".excel"), plans_path(format: "xls"), id: "export" %>
 </p>
 <%= javascript_pack_tag "export.js" %>
-<%= form_tag plans_path, method: :get, remote: true do %>
+<%= search_form_for @search, remote: true do |f| %>
   <div class="col-md-10 col-lg-offset-1">
-    <%= label_tag :month, t(".month") %>
-    <%= select_tag :month, options_for_select(1..12),
-    {include_blank: true, class: "form-control"} %>
-    <%= label :status, t(".status") %>
-    <%= select_tag :status,
+    <%= f.label :month_eq, t(".month") %>
+    <%= f.select :month_eq, options_for_select(1..12),
+    {include_blank: true}, class: "form-control" %>
+
+    <%= f.label :status_eq, t(".status") %>
+    <%= f.select :status_eq,
       options_for_select(Plan.status_option_search),
-      {include_blank: true, class: "form-control"} %>
+      {include_blank: true}, class: "form-control" %>
   </div>
   <div class="col-md-10 col-lg-offset-1">
-    <%= submit_tag t(".search"), id: "submit", class: "btn btn-primary" %>
+    <%= f.submit t(".search"), id: "submit", class: "btn btn-primary" %>
   </div>
 <% end %>
 <div id="total_moneys" class="col-md-10 col-lg-offset-1">

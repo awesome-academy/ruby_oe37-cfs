@@ -25,7 +25,7 @@ users = User.order(:created_at).take(6)
   users.each { |user| user.categories.create!(name: name) }
 end
 
-500.times do
+100.times do
 
   Plan.create!(
     month: rand(1..12),
