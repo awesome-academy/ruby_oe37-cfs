@@ -1,4 +1,5 @@
 class SharesController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!
   def index
     return @plans = Plan.none if params[:user_id].blank?
@@ -18,7 +19,7 @@ class SharesController < ApplicationController
   def create
     @share = current_user.from_user_shares.build share_params
     if @share.save
-      flash[:success] = t ".success"
+      flash[:notice] = t ".success"
       redirect_to :new_share
     else
       flash.now[:danger] = t ".fails"

@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe SharesController, type: :controller do
-  let(:first_user) {FactoryBot.create :user}
-  let(:second_user) {FactoryBot.create :user}
+  let(:first_user) {FactoryBot.create :user, role: 2}
+  let(:second_user) {FactoryBot.create :user, role: 2}
   let!(:first_category) {FactoryBot.create :category,
     user_id: first_user.id}
   let!(:second_category) {FactoryBot.create :category,
@@ -39,7 +39,7 @@ RSpec.describe SharesController, type: :controller do
       end
 
       it "display success message" do
-        expect(flash[:success]).to be_present
+        expect(flash[:notice]).to be_present
       end
 
       it "redirects_to :action => :new_share" do

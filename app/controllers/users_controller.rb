@@ -23,9 +23,9 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update(user_params)
-      flash[:success] = t "edit.edit_success"
-      redirect_to @user
+    if @user.member!
+      flash[:notice] = t "edit.edit_success"
+      redirect_to root_path
     else
       flash.now[:danger] = t "edit.edit_fail"
       render :edit

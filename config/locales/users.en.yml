@@ -33,11 +33,12 @@ en:
     expired: "Password reset has expired."
   edit:
     title: "Edit user"
-    edit_title: "Update your profile"
+    edit_title: "Upgrade your account"
     change: "Change"
     save_c: "Save changes"
-    edit_success: "Profile updated"
-    edit_fail: "Profile update failed"
+    edit_success: "You account has been upgrade successfully"
+    edit_fail: "Upgrade error"
+    already_upgrade: "Your account already upgrade"
   manger_user:
     delete: "Delete"
     show: "Show Categories"
@@ -61,3 +62,6 @@ en:
       default: "%d-%m-%Y"
       long: "%d %B, %Y"
       short: "%d %b"
+  users:
+    upgrade_form:
+      upgrade: "Click here to upgrade your account"

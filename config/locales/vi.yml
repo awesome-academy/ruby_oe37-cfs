@@ -29,3 +29,8 @@ vi:
     title_expenses: "Biểu đồ cho thấy các chi phí"
     month: "Tháng"
     moneys: "Tiền"
+  shares:
+    new:
+      access_denied_permission: "Bạn không có quyền truy cập trang này. Vui lòng nâng cấp tài khoản"
+    index:
+      access_denied_permission: "Bạn không có quyền truy cập trang này. Vui lòng nâng cấp tài khoản"

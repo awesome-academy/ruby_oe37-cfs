@@ -29,3 +29,8 @@ en:
     title_expenses: "The graph shows the expenses"
     month: "Month"
     moneys: "Moneys"
+  shares:
+    new:
+      access_denied_permission: "You are not authorized to access this page. Please upgrade your account"
+    index:
+      access_denied_permission: "You are not authorized to access this page. Please upgrade your account"

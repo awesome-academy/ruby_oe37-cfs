@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe PlansController, type: :controller do
   let(:user) {FactoryBot.create :user}
@@ -36,7 +36,7 @@ RSpec.describe PlansController, type: :controller do
       end
 
       it "display success message" do
-        expect(flash[:success]).to be_present
+        expect(flash[:notice]).to be_present
       end
 
       it "redirects_to :action => :new_plan" do

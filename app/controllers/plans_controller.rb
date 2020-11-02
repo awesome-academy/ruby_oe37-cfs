@@ -19,7 +19,7 @@ class PlansController < ApplicationController
   def create
     @plan = current_user.plans.build plan_params
     if @plan.save
-      flash[:success] = t ".create_successfully"
+      flash[:notice] = t ".create_successfully"
       redirect_to :new_plan
     else
       render :new
