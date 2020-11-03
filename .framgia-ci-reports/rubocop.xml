@@ -7,11 +7,11 @@
   <file name='app/controllers/application_controller.rb'/>
   <file name='app/controllers/categories_controller.rb'/>
   <file name='app/controllers/chart_controller.rb'/>
-  <file name='app/controllers/password_resets_controller.rb'/>
   <file name='app/controllers/plans_controller.rb'/>
   <file name='app/controllers/sessions_controller.rb'/>
   <file name='app/controllers/shares_controller.rb'/>
   <file name='app/controllers/static_pages_controller.rb'/>
+  <file name='app/controllers/users/confirmations_controller.rb'/>
   <file name='app/controllers/users_controller.rb'/>
   <file name='app/helpers/application_helper.rb'/>
   <file name='app/helpers/categories_helper.rb'/>

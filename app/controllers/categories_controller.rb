@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :find_category_id, only: :destroy
+  before_action :authenticate_user!
   before_action :load_categories_of_user, only: %i(index create)
 
   def index

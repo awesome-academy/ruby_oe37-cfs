@@ -5,13 +5,24 @@ RSpec.describe CategoriesController, type: :controller do
   let!(:first_category) {FactoryBot.create :category, user_id: user.id}
   let!(:second_category) {FactoryBot.create :category, user_id: user.id}
   let(:valid_params) {FactoryBot.attributes_for :category, user_id: user.id}
-  let(:invalid_params) {FactoryBot.attributes_for :category, name: nil}
+  let(:invalid_params) {FactoryBot.attributes_for :category, name: nil, delete_flag: 1}
   let(:inactive) {FactoryBot.create :category, delete_flag: 1, user_id: user.id}
-  before {login user}
+  before {login_user user}
 
   describe "before action" do
     it { should use_before_action(:find_category_id) }
     it { should use_before_action(:load_categories_of_user) }
+  end
+
+  describe "GET #index" do
+    before {get :index, params: {page: 1}}
+    it "renders the index template" do
+      expect(response).to render_template :index
+    end
+
+    it "assigns @categories" do
+      expect(assigns(:categories).pluck(:id)).to eq [second_category.id, first_category.id]
+    end
   end
 
   describe "GET #index" do

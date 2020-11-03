@@ -33,7 +33,7 @@ en:
     expired: "Password reset has expired."
   edit:
     title: "Edit user"
-    edit_title: "Update your profile"
+    edit_title: "Update your profile "
     change: "Change"
     save_c: "Save changes"
     edit_success: "Profile updated"
