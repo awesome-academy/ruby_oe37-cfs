@@ -13,6 +13,7 @@ en:
     create:
       create_successfully: "Create Successfully"
       error: "Error"
+      warning: "Expenses are higher than income. Please balance your finances"
     index:
       view_plan: "View Plan"
       search: "Search"
