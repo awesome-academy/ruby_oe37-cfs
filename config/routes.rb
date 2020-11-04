@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     resources :users
     resources :chart
     resources :account_activations, only: [:edit]
-    resources :plans, only: [:index, :new , :create]
+    resources :plans, only: [:index, :new , :create] do
+      collection do
+        get "/reload_categories/", to: "plans#reload_categories"
+      end
+    end
     resources :password_resets, only: [:new, :create, :edit, :update]
     resources :categories, only: [:index, :create, :destroy]
     resources :shares, only: [:index, :new, :create] do

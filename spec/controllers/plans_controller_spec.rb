@@ -69,4 +69,11 @@ RSpec.describe PlansController, type: :controller do
 
     end
   end
+
+  describe "GET #reload_categories" do
+    before {get :reload_categories, format: :json}
+    it "load all categories" do
+      expect(response).to have_http_status(200)
+    end
+  end
 end
