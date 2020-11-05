@@ -64,3 +64,6 @@ vi:
   users:
     upgrade_form:
       upgrade: "Nhấn vào nút này để nâng cấp tài khoản"
+  user_upgrade_mailer:
+    upgrade_notification:
+      subject: "Nâng cấp tài khoản thành công"

@@ -65,3 +65,6 @@ en:
   users:
     upgrade_form:
       upgrade: "Click here to upgrade your account"
+  user_upgrade_mailer:
+    upgrade_notification:
+      subject: "Upgrade successfully"

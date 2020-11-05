@@ -19,6 +19,8 @@ vi:
       cash_flow_management: "Quản Lý Chi Tiêu"
       category: "Danh mục"
       chart: "Biểu đồ"
+      upgrade: "Nâng cấp"
+      sign_up: "Đăng ký"
   static_pages:
       home:
         home: "Trang chủ"

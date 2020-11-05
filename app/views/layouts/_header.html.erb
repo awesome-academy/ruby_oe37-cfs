@@ -25,7 +25,7 @@
                 <% if current_user.admin? %>
                   <li><%= link_to t("admin.page"), admin_users_path %></li>
                 <% end %>
-                <li><%= link_to t("user.upgrade"), edit_user_path(current_user) %></li>
+                <li><%= link_to t(".upgrade"), edit_user_path(current_user) %></li>
                 <li><%= link_to t(".settings"), edit_user_registration_path %></li>
                 <li><%= link_to t(".signout"),
                 destroy_user_session_path, method: :delete %>

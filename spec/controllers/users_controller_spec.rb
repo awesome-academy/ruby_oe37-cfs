@@ -22,6 +22,11 @@ RSpec.describe UsersController, type: :controller do
       it "should redirect to categories_path" do
         expect(response).to redirect_to root_path
       end
+
+      it "send email to sidekiq" do
+        expect {SendMailUpgradeWorker.perform_async first_user.id}
+          .to change(SendMailUpgradeWorker.jobs, :size).by(1)
+      end
     end
 
     context "with invalid user" do

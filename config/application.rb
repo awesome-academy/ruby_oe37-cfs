@@ -16,5 +16,6 @@ module RubyOe37Cfs
                        helper_specs: false,
                        controller_specs: true
     end
+    config.active_job.queue_adapter = :sidekiq
   end
 end

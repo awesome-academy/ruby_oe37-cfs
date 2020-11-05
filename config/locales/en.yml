@@ -19,6 +19,8 @@ en:
       cash_flow_management: "Cash Flow Management"
       category: "Category"
       chart: "Chart"
+      upgrade: "Upgrade"
+      sign_up: "Sign up"
   static_pages:
     home:
       home: "Home"
