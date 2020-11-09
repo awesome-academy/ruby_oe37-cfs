@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root to: "static_pages#home"
     devise_for :users, skip: :omniauth_callbacks, controllers: {
-        confirmations: "users/confirmations"
+        confirmations: "users/confirmations",
+        registrations: "users/registrations"
       }
     get "/home", to: "static_pages#home"
     resources :users
