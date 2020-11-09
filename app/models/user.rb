@@ -47,4 +47,16 @@ class User < ApplicationRecord
       uid: access_token[:uid],
       provider: access_token[:provider])
   end
+
+  def soft_delete
+    update_attribute(:deleted_at, Time.current)
+  end
+
+  def active_for_authentication?
+    super && !deleted_at
+  end
+
+  def inactive_message
+    !deleted_at ? super : :deleted_account
+  end
 end

@@ -20,6 +20,7 @@ vi:
       timeout: Phiên làm việc của bạn đã kết thúc, bạn cần đăng nhập lại để tiếp tục.
       unauthenticated: Bạn cần phải đăng nhập hoặc đăng ký trước khi tiếp tục.
       unconfirmed: Bạn cần phải xác nhận tài khoản trước khi tiếp tục.
+      deleted_account: "Xin lỗi! Tài khoản này đã bị xóa!"
     mailer:
       confirmation_instructions:
         subject: Hướng dẫn xác nhận tài khoản
